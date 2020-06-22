@@ -1,5 +1,6 @@
 import sys, pygame
 from setting import Setting
+from model import Model
 
 
 def main():
@@ -9,6 +10,8 @@ def main():
     print(type(screen))
     pygame.display.set_caption('Color Point')
     clock = pygame.time.Clock()
+    model = Model(setting)
+
     # sprites = pygame.sprite.Group()
 
     running = True

@@ -2,9 +2,11 @@ import pygame
 from enum import Enum
 
 class Cell(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self, row, col, status):
         super().__init__()
-        self.status = CellStatus
+        self.status = status
+        self.row = row
+        self.col = col
 
 
 class CellStatus(Enum):
