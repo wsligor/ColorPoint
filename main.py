@@ -1,18 +1,18 @@
 import sys, pygame
 from setting import Setting
 from model import Model
+from view_model import ColorPointView
 
 
 def main():
     pygame.init()
     setting = Setting()
     screen: pygame.Surface = pygame.display.set_mode(setting.SCREEN_SIZE)
-    print(type(screen))
+    #print(type(screen))
     pygame.display.set_caption('Color Point')
     clock = pygame.time.Clock()
-    model = Model(setting)
+    color_point_view = ColorPointView(setting)
 
-    # sprites = pygame.sprite.Group()
 
     running = True
     # Цикл игры
@@ -25,10 +25,11 @@ def main():
                 running = False
 
         # Обновление
+        color_point_view.cells.update()
 
         # Рендеринг
-        screen.fill(setting.BLACK)
-
+        screen.fill(setting.WHITE)
+        color_point_view.cells.draw(screen)
         # После отрисовки всего, переворачиваем экран
         pygame.display.flip()
 

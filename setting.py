@@ -8,8 +8,13 @@ class Setting():
 
         self.FPS = 60
 
-        self.SCREEN_SIZE = (200, 200)
+        self.width_bloks = 10
+        self.height_bloks = 10
+        self.margin_playing_field = 1
+        self.block_size = 40
 
-        self.width_playing_field = 10
-        self.height_playing_field = 10
-
+        self.width = self.width_bloks * self.block_size + (
+                self.width_bloks + 1) * self.margin_playing_field
+        self.height = self.height_bloks * self.block_size + (
+                self.height_bloks + 1) * self.margin_playing_field
+        self.SCREEN_SIZE = (self.width, self.height)
